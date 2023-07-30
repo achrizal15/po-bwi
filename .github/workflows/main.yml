@@ -19,8 +19,12 @@ jobs:
         password: ${{ secrets.ftp_password }}
         server-dir: /
 
-    - name: Artisan
-      run: composer install
+    - name: Setup Env
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
 
-    - name: npm
-      run: npm install && npm run build
+    -  name: Speed up the packages installation process
+       run: composer global require hirak/prestissimo
+    -  name: Install Packages
+       run: composer install --no-dev
