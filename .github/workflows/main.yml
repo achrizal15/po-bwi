@@ -20,6 +20,6 @@ jobs:
         server-dir: /
       
     - name: Artisan
-      run: php artisan optimize:clear
+      run: artisan optimize:clear
     - name: npm
       run: npm install && npm run build
