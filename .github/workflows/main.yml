@@ -21,3 +21,5 @@ jobs:
       
     - name: Artisan
       run: php artisan optimize:clear
+    - name: npm
+      run: npm install && npm run build
