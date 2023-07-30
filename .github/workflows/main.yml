@@ -18,8 +18,9 @@ jobs:
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         server-dir: /
-      
+
     - name: Artisan
-      run: artisan optimize:clear
+      run: composer install
+
     - name: npm
       run: npm install && npm run build
