@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+    container_name: your-container-name
+    ports:
+      - "8000:80" # Change the port mapping if needed
+    volumes:
+      - ${PWD}:/var/www/html
+    networks:
+      - db_network
+networks:
+   db_network:
+    external: true
+    driver: db_network

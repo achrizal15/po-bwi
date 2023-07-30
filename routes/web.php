@@ -11,8 +11,8 @@
 |
 */
 
+Route::get('log-viewers', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 include_once('install_r.php');
-
 Route::middleware(['setData'])->group(function () {
     Route::get('/', function () {
         return view('welcome');
