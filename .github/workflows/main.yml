@@ -18,11 +18,3 @@ jobs:
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         server-dir: /
-
-    - name: Setup Env
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.4'
-
-    -  name: Install Packages
-       run: composer install --no-dev
